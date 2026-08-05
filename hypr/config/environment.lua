@@ -4,13 +4,12 @@ hl.env("XCURSOR_SIZE", "60")
 hl.env("HYPRCURSOR_SIZE", "60")
 
 --Nvidia
-hl.env("GBM_BACKEND", "nvidia-drm")
 hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
 hl.env("LIBVA_DRIVER_NAME", "nvidia")
+hl.env("NVD_BACKEND", "direct")
 
 -- Toolkit backend
 hl.env("GDK_BACKEND", "wayland,x11,*")
-hl.env("QT_QPA_PLATFORM", "wayland;xcb")
 hl.env("SDL_VIDEODRIVER", "wayland")
 hl.env("CLUTTER_BACKEND", "wayland")
 

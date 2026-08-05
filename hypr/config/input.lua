@@ -1,4 +1,4 @@
-local browser = "zen-browser"
+
 
 hl.config({
 	input = {
@@ -68,7 +68,7 @@ hl.device({
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
--- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
+-- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ forr more
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("kitty"))
 local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
@@ -79,13 +79,13 @@ hl.bind(
 
 -- hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 --
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd('kitty zsh -c "yazi; zsh"'))
+-- hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd('dolphin'))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("~/.config/rofi/launchers/type-2/launcher.sh"))
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("wofi --show drun"))
 -- hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 -- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
-hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
+hl.bind("Print", hl.dsp.exec_cmd("grimshot copy area"))
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("~/.config/waybar/scripts/launch.sh"))
 
 -- Move focus with mainMod + arrow keys
@@ -107,8 +107,8 @@ end
 -- hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e-1" }))
-hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mainMod .. " + period", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + comma", hl.dsp.focus({ workspace = "e-1" }))
 
