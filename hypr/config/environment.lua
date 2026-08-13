@@ -1,7 +1,8 @@
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
 
 hl.env("XCURSOR_SIZE", "60")
-hl.env("HYPRCURSOR_SIZE", "60")
+hl.env("HYPRCURSOR_SIZE", "47")
+hl.env("HYPRCURSOR_THEME", "MyCursor")
 
 --Nvidia
 hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
@@ -25,10 +26,24 @@ hl.env("QT_QPA_PLATFORM", "wayland;xcb")
 hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
+hl.env(
+	"XDG_DATA_DIRS",
+	"$HOME/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share"
+)
+
 -- Steam
 -- Fix Steam context menus and tooltips flickering/crashing in Hyprland
 hl.window_rule({
 	match = { class = "^(steam)$", title = "^()$" },
 	stay_focused = true,
 	min_size = { 1, 1 },
+})
+
+hl.config({
+	xwayland = {
+		force_zero_scaling = true,
+	},
+	render = {
+		direct_scanout = 0, -- or false depending on your wrapper version
+	},
 })
